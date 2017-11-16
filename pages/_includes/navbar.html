@@ -2,7 +2,12 @@
 <div id="segment-header" class="segment">
   <!-- segment-header -->
   <div class="container">
-    <!-- container -->        {% capture my-include %}{% include logo.md %}{% endcapture %}{{ my-include | markdownify }}  <div id="your-nav">     {% capture my-include %}{% include hl7-logo.md %}{% endcapture %}{{ my-include | markdownify }}   </div>
+    <!-- container --> <a id="logo" no-external="true" href="http://hl7.org/fhir">
+      <img alt="logo fhir" src="assets/images/fhir-logo-www.png"/>
+    </a>
+      <div id="project-nav">
+             {% capture my-include %}{% include logo.md %}{% endcapture %}{{ my-include | markdownify }}
+      </div>
     <div id="ig-status">
       <b>{{site.data.fhir.igName}} Implementation Guide CI Build</b>
     </div>
