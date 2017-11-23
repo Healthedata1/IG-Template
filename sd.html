@@ -31,7 +31,7 @@ active: profiles
 <a name="introduction"> </a>
 
 
-{% capture my-include %}{% include {{[id]}}-intro.md %}{% endcapture %}{{ my-include | markdownify }}
+{% capture my-include %}{% include {{[id]}}-intro.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
 
 
 <!-- example here -->
@@ -58,31 +58,32 @@ Formal Views of Profile Content
 </p>
 
 
-<!--  ********remove the tabs for now for editing purposes*********
+<!--  ********remove the tabs for now for editing purposes if status draft ********* -->
+
+{% if {{site.data.structuredefinitions.{{[id]}}.status}} == "active" %}
 
 <div id="tabs">
  <ul>
   <li><a href="#tabs-summ">Text Summary</a></li>
   <li><a href="#tabs-diff">Differential Table</a></li>
   <li><a href="#tabs-snap">Snapshot Table</a></li>
--->
+
 <!--
   <li><a href="#tabs-xml">XML Template</a></li>
   <li><a href="#tabs-json">JSON Template</a></li>
 -->
-
-<!--  ********remove the tabs for now for editing purposes*********
   <li><a href="#tabs-all">All</a></li>
+
  </ul>
 
  <div id="tabs-summ">
   <div id="tbl-summ">
    <div id="tbl-diff-inner">
      <a name="summary"> </a>
--->
+
 <!--{% include {{[type]}}-{{[id]}}-summary.xhtml %}-->
 
-<!--  ********remove the tabs for now for editing purposes*********
+
 {% capture my-include %}{% include {{[id]}}-summary.md %}{% endcapture %}{{ my-include | markdownify }}
    </div>
   </div>
@@ -103,7 +104,7 @@ Formal Views of Profile Content
    </div>
   </div>
  </div>
--->
+
 
 <!--
  <div id="tabs-xml">
@@ -122,6 +123,9 @@ Formal Views of Profile Content
   </div>
  </div>
 -->
+
+{% endif %}
+
 
  <div id="tabs-all">
   <div id="tbl-summ">
@@ -145,7 +149,9 @@ Formal Views of Profile Content
    </div>
   </div>
 
-  <!--
+
+
+<!--
   <div id="all-xml">
    <p><b>XML Template</b></p>
    <div id="all-xml-inner">{% include {{[type]}}-{{[id]}}-pseudo-xml.xhtml %}
@@ -168,20 +174,30 @@ Formal Views of Profile Content
 
 <p>&nbsp;</p>
 
+
+{% if "{{[id]}}" contains "extension" %}
+
+<hr/>
+
+ See the <a href="capstatements.html"/>Conformance requirements</a> for a complete list of supported RESTful interactions for this IG.</p>
+
+{% else %}
+
 <!-- search text here-->
 <a name="search"> </a>
 <h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.2 - </span> Quick Start <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#search"><img src="target.png"/></a></h4>
-<p>Below is an overview of the required search and read operations for this profile.  See the <a href="capstatements.html"/>Conformance requirements</a> for a complete list of supported RESTful operations and search parameters for this IG.</p>
+<p>Below is an overview of the required set of RESTful FHIR interactions - for example, search and read operations - for this profile.  See the <a href="capstatements.html"/>Conformance requirements</a> for a complete list of supported RESTful interactions for this IG.</p>
 
 {% capture my-include %}{% include {{[id]}}-search.md %}{% endcapture %}{{ my-include | markdownify }}
 
 
+{% endif %}
   <!-- ==============END CONTENT END CONTENT=================== -->
 
 {% include container-end.html %}
 
-<script src="jquery.js"> </script>
-<script src="jquery-ui.min.js"> </script>
+<script src="assets/js/jquery.js"> </script>
+<script src="assets/js/jquery-ui.min.js"> </script>
 <script>
 try {
   var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
