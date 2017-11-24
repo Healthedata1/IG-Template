@@ -1,7 +1,10 @@
 ---
 # jekyll header
 custom:
-  - eicr-ccda-on-fhir
+  - map: eicr-ccda-on-fhir
+    title: "Mappings the EICR Data Elements to the PC Case Composition FHIR Profile."
+  - map: rr-communication
+    title: "Mappings the RR Data Elements to the RR Communication FHIR Profile."
 ---
 
 
@@ -25,23 +28,22 @@ custom:
 
 <div class="col-9">
 
-<ul class="nav nav-tabs"><li><a href="{{[type]}}-{{[id]}}.html">Content</a></li><li><a href="{{[type]}}-{{[id]}}-definitions.html">Detailed Descriptions</a></li><li class="active"><a href="#">Mappings</a></li><li><a href="{{[type]}}-{{[id]}}.xml.html">XML</a></li><li><a href="{{[type]}}-{{[id]}}.json.html">JSON</a></li></ul>
+{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="mappings" %}
 
+<h4><span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: {{[title]}} - Mappings <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}-definitions.html#D.4.1.4"><img src="target.png"/></a></h4>
 
 <!-- insert to allow for custom mappings in markdown listed in the front matter to be inserted into mappings tab -->
 
 {% for item in page.custom %}
-  {% if item == "{{[id]}}" %}
-    <p>Mappings the EICR Data Elements to the {{[type]}}-{{[id]}} Profile.</p>
-    {% capture my-include %}{% include {{{[id]}}-custom-mapping.md %}{% endcapture %}{{ my-include | markdownify }}
+  {% if item.map == "{{[id]}}" %}
+    <h3>{{item.title}}</h3>
+    {% capture my-include %}{% include {{[id]}}-custom-mapping.md %}{% endcapture %}{{ my-include | markdownify }}
     <br />
   {% endif %}
 {% endfor %}
 
 
 
-
-<h4><span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: {{[title]}} - Mappings <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}-definitions.html#D.4.1.4"><img src="target.png"/></a></h4>
 
 <p>Mappings for the {{[type]}}-{{[id]}} Profile.</p>
 

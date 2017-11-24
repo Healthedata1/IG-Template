@@ -15,6 +15,10 @@ active: profiles
 
 <!-- ============CONTENT CONTENT=============== -->
 
+
+{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
+
+<!--
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#">Content</a></li>
 	<li><a href="{{[type]}}-{{[id]}}-definitions.html">Detailed Descriptions</a></li>
@@ -23,6 +27,14 @@ active: profiles
 	<li><a href="{{[type]}}-{{[id]}}.json.html">JSON</a></li>
 	<li><a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a></li>
 </ul>
+-->
+
+<!--simpler links to other pages
+<p>
+Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[id]}}.json.html">JSON</a>, <a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a>
+</p>
+
+-->
 
 <h3><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}<a name="SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}"> </a></span>{{[type]}}-{{[id]}}<a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}"><img src="target.png"/></a></h3>
 
@@ -84,7 +96,7 @@ Formal Views of Profile Content
 <!--{% include {{[type]}}-{{[id]}}-summary.xhtml %}-->
 
 
-{% capture my-include %}{% include {{[id]}}-summary.md %}{% endcapture %}{{ my-include | markdownify }}
+{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
    </div>
   </div>
  </div>
@@ -132,7 +144,7 @@ Formal Views of Profile Content
    <div id="tbl-diff-inner">
      <a name="summary"> </a>
 <!--   {% include {{[type]}}-{{[id]}}-summary.xhtml %}  -->
-{% capture my-include %}{% include {{[id]}}-summary.md %}{% endcapture %}{{ my-include | markdownify }}
+{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
    </div>
   </div>
 
@@ -188,7 +200,7 @@ Formal Views of Profile Content
 <h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.2 - </span> Quick Start <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#search"><img src="target.png"/></a></h4>
 <p>Below is an overview of the required set of RESTful FHIR interactions - for example, search and read operations - for this profile.  See the <a href="capstatements.html"/>Conformance requirements</a> for a complete list of supported RESTful interactions for this IG.</p>
 
-{% capture my-include %}{% include {{[id]}}-search.md %}{% endcapture %}{{ my-include | markdownify }}
+{% capture my-include %}{% include {{[id]}}-search.md  id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
 
 
 {% endif %}
