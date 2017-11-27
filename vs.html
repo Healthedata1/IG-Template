@@ -4,8 +4,9 @@ level: 2
 active: terminology
 ---
 
-
 {% include header.html %}
+
+{% include navbar.html %}
 
 {% include container-start.html %}
 
@@ -16,14 +17,17 @@ active: terminology
 <!-- ============CONTENT CONTENT=============== -->
 {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
+{% if {{[type]}} == Valueset %}
 
-{% include {{[type]}}-{{[id]}}-summary.xhtml %}
-{% include {{[type]}}-{{[id]}}-xref.xhtml %}
-{% include {{[type]}}-{{[id]}}-cld.xhtml %}
+  {% include {{[type]}}-{{[id]}}-summary.xhtml %}
+  {% include {{[type]}}-{{[id]}}-xref.xhtml %}
+  {% include {{[type]}}-{{[id]}}-cld.xhtml %}
 
-<h3>Expansion</h3>
+  <h3>Expansion</h3>
 
 {% include {{[type]}}-{{[id]}}-expansion.xhtml %}
+
+{% endif %}
 
   <!-- ==============END CONTENT END CONTENT=================== -->
 

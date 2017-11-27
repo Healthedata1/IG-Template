@@ -4,17 +4,19 @@
 
 {% include header.html %}
 
-<!-- ============BreadCrumbs=============== -->
+{% include navbar.html %}
 
 {% include container-start.html %}
 
   <!-- ============CONTENT CONTENT=============== -->
 {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
+
+<!--
 <p>
 Formats: <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[id]}}.json.html">JSON</a>, <a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a>
 </p>
-
+-->
 
 
 {% include {{[type]}}-{{[name]}}.xhtml %}

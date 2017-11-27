@@ -3,18 +3,11 @@
 level: 2
 active: profiles
 ---
+{% include header.html %}
 
-
-  {% include header.html %}
+{% include navbar.html %}
 
 {% include container-start.html %}
-
-<!-- ============BreadCrumb=============== -->
-
-{% include breadcrumbs.html %}
-
-<!-- ============CONTENT CONTENT=============== -->
-
 
 {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
