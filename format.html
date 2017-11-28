@@ -33,15 +33,14 @@ br_SearchParameter : searchparams
   {% else %}
     {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="turtle" %}
     <h2>Turtle Format: {{[type]}}-{{[id]}}</h2>
-    <!-- ============ default xml or json content CONTENT CONTENT=============== -->
   {% endif %}
   <p>
   Raw <a href="{{[type]}}-{{[id]}}.{{[fmt]}}" download>{{[fmt]}}</a>
   </p>
 
-"page.br_{ { [type] } }" = {{ page.br_{{[type]}} }}
+{% include {{[type]}}-{{[name]}}.xhtml %}
 
-<!-- ============CapabilityStatement CONTENT CONTENT=============== -->
+<!-- ============ default xml or json content CONTENT CONTENT=============== -->
 
 
 <!-- simple format links
