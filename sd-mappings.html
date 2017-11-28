@@ -6,12 +6,15 @@ active: profiles
 {% include navbar.html %}
 
 {% include container-start.html %}
+<!-- ============BreadCrumb=============== -->
+
+{% include breadcrumbs.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
 
 {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="mappings" %}
 
-<h4><span class="sectioncount">D.4.1.4<a name="D.4.1.4"> </a></span> StructureDefinition: {{[title]}} - Mappings <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}-definitions.html#D.4.1.4"><img src="target.png"/></a></h4>
-
-<p>Mappings for the {{[type]}}-{{[id]}} Profile.</p>
+<h3>Mappings for the {{[type]}}-{{[id]}} Profile.</h3>
 
 {%include {{[type]}}-{{[id]}}-maps.xhtml%}
 

@@ -48,6 +48,8 @@ output
 archive
 sandbox
 capstmnt_markup
+ig.json
+
 # Altova files #
 ################
 *.spp
