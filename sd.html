@@ -69,11 +69,13 @@ Formal Views of Profile Content
 </p>
 
 
-<!--  ********remove the tabs for now for editing purposes if status draft ********* -->
+<!--  ********remove the tabs editing purposes if status draft ********* -->
 
 {% if {{site.data.structuredefinitions.{{[id]}}.status}} == "active" %}
 
 <div id="tabs">
+
+<!--  this could be a customizable include -->
  <ul>
   <li><a href="#tabs-summ">Text Summary</a></li>
   <li><a href="#tabs-diff">Differential Table</a></li>
@@ -92,7 +94,7 @@ Formal Views of Profile Content
    <div id="tbl-diff-inner">
      <a name="summary"> </a>
 
-<!--{% include {{[type]}}-{{[id]}}-summary.xhtml %}-->
+<!--{ % include {{[type]}}-{{[id]}}-summary.xhtml %}-->
 
 
 {% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
@@ -165,7 +167,8 @@ Formal Views of Profile Content
 <!--
   <div id="all-xml">
    <p><b>XML Template</b></p>
-   <div id="all-xml-inner">{% include {{[type]}}-{{[id]}}-pseudo-xml.xhtml %}
+   <div id="all-xml-inner">
+{% include {{[type]}}-{{[id]}}-pseudo-xml.xhtml %}
    </div>
   </div>
 
