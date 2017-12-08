@@ -77,7 +77,7 @@ Formal Views of Profile Content
 
 <!--  this could be a customizable include -->
  <ul>
-  <li><a href="#tabs-summ">Text Summary</a></li>
+  {% unless "{{[id]}}" contains "extension" %}<li><a href="#tabs-summ">Text Summary</a></li>{% endunless %}
   <li><a href="#tabs-diff">Differential Table</a></li>
   <li><a href="#tabs-snap">Snapshot Table</a></li>
 
@@ -88,7 +88,7 @@ Formal Views of Profile Content
   <li><a href="#tabs-all">All</a></li>
 
  </ul>
-
+{% unless "{{[id]}}" contains "extension" %}
  <div id="tabs-summ">
   <div id="tbl-summ">
    <div id="tbl-diff-inner">
@@ -101,6 +101,7 @@ Formal Views of Profile Content
    </div>
   </div>
  </div>
+{% endunless %}
 
  <div id="tabs-diff">
   <div id="tbl-diff">
@@ -141,25 +142,35 @@ Formal Views of Profile Content
 
 
  <div id="tabs-all">
-  <div id="tbl-summ">
-   <div id="tbl-diff-inner">
+
+{% unless "{{[id]}}" contains "extension" %}
+  <div id="all-tbl-summ">
+
+   <div id="all-tbl-summ-inner">
      <a name="summary"> </a>
 <!--   {% include {{[type]}}-{{[id]}}-summary.xhtml %}  -->
 {% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
    </div>
+
   </div>
+  {% endunless %}
 
  <div id="all-tbl-diff">
    <p><b>Differential View</b></p>
+
    <div id="all-tbl-diff-inner">
    {% include {{[type]}}-{{[id]}}-diff.xhtml %}
    </div>
+
   </div>
+
   <div id="all-tbl-snap">
    <p><b>Snapshot View</b></p>
+
    <div id="all-tbl-snap-inner">
 {% include {{[type]}}-{{[id]}}-snapshot.xhtml %}
    </div>
+
   </div>
 
 
