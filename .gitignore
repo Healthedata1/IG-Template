@@ -20,7 +20,9 @@
 *.jar
 *.rar
 *.tar
-*.zip
+!dependencies/ccdafhir/definitions.json.zip
+!dependencies/uscore/definitions.json.zip
+!dependencies/uscore-ballot/definitions.json.zip
 
 # Logs and databases #
 ######################
