@@ -17,7 +17,7 @@ active: profiles
 
 {% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
-<!--
+<!--{% raw %}
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#">Content</a></li>
 	<li><a href="{{[type]}}-{{[id]}}-definitions.html">Detailed Descriptions</a></li>
@@ -26,14 +26,14 @@ active: profiles
 	<li><a href="{{[type]}}-{{[id]}}.json.html">JSON</a></li>
 	<li><a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a></li>
 </ul>
--->
+{% endraw %}-->
 
-<!--simpler links to other pages
+<!--{% raw %} simpler links to other pages
 <p>
 Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{{[id]}}.xml.html">XML</a>, <a href="{{[type]}}-{{[id]}}.json.html">JSON</a>, <a href="{{[type]}}-{{[id]}}.ttl.html">Turtle</a>
 </p>
 
--->
+{% endraw %}-->
 
 <h2><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}</span> {{[type]}}-{{[id]}}</h2>
 
@@ -47,12 +47,11 @@ Formats: <a href="{{[type]}}-{{[id]}}.html">Narrative</a>, <a href="{{[type]}}-{
 
 <!-- example here -->
 
-<!--
+<!--{% raw %}
 <h5>Example: <a href="daf-{{page.code}}-{{page.example}}.html">{{page.tcode}} Example: {{page.example}}</a></h5>
--->
-<!--  try build generated templates
-<h5>Example: <a href="{{[title]}}.example.html">{{[title]}} Example</a></h5> -->
 
+<h5>Example: <a href="{{[title]}}.example.html">{{[title]}} Example</a></h5>
+{% endraw %}-->
 
 
 <a name="profile"> </a>
@@ -137,7 +136,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basep
  </div>
 
 
-<!--
+ <!--{% raw %}
  <div id="tabs-xml">
   <div id="xml">
    <div id="xml-inner">
@@ -153,7 +152,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basep
    </div>
   </div>
  </div>
--->
+{% endraw %}-->
 
 {% endif %}
 
@@ -166,7 +165,8 @@ This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basep
    <div id="all-tbl-summ-inner">
      <a name="summary"> </a>
 {% include {{[type]}}-{{[id]}}-summary.xhtml %}
-<!--{% raw %}{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
+<!--{% raw %}
+{% capture my-include %}{% include {{[id]}}-summary.md id="{{[id]}}" %}{% endcapture %}{{ my-include | markdownify }}
 {% endraw %}-->
    </div>
 
@@ -193,7 +193,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basep
 
 
 
-<!--
+  <!--{% raw %}
   <div id="all-xml">
    <p><b>XML Template</b></p>
    <div id="all-xml-inner">
@@ -207,7 +207,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basep
 {% include {{[type]}}-{{[id]}}-pseudo-json.xhtml %}
    </div>
   </div>
--->
+{% endraw %}-->
  </div>
 </div>
 
