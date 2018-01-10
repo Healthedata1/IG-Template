@@ -1,6 +1,8 @@
-# {{ page.title }}
-
-source pages/_include/{{page.md_filename}}.md  file
+---
+title: Extensions defined for this Guide
+layout: default
+active: extensions
+---
 
 These extensions have been defined for this implementation guide.
-<!-- {% raw %} {% include list-simple-extensions.%} {% endraw %} -->
+{% include list-simple-extensions.xhtml %}

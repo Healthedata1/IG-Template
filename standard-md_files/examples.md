@@ -1,12 +1,14 @@
-# {{ page.title }}
-
-source pages/_include/{{page.md_filename}}.md  file
+---
+title: Examples
+layout: default
+active: examples
+---
 
 **Examples**
 
 Examples for this IG:
 
-<!-- {% raw %} {% include list-simple-observations.%} {% endraw %} -->
+{% include list-simple-observations.xhtml %}
 
 `todo: generate an example list from preprocessor`
 

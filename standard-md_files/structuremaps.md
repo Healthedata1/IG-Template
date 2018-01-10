@@ -1,11 +1,12 @@
-# {{ page.title }}
-
-source pages/_include/{{page.md_filename}}.md  file
-
+---
+title: Structure Maps defined as part of this Guide
+layout: default
+active: structuremaps
+---
 #### Structure Maps
 
 This is the mappings between FHIR resources and Logical Models:
 
-<!-- {% raw %} {% include list-simple-structuremaps.%} {% endraw %} -->
+{% include list-simple-structuremaps.xhtml %}
 
 ---

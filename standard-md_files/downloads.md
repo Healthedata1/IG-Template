@@ -1,6 +1,8 @@
-# {{ page.title }}
-
-source pages/_include/{{page.md_filename}}.md  file
+---
+title: Downloads
+layout: default
+active: downloads
+---
 
 **Validator Pack and Definitions:**
 

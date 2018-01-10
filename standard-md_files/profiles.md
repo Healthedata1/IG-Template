@@ -1,16 +1,18 @@
-# {{ page.title }}
-
-source pages/_include/{{page.md_filename}}.md  file
+---
+title: Profiles defined as part of this Guide
+layout: default
+active: profiles
+---
 
 #### Profiles
 
 The following Profiles have been defined for this implementation guide.
 
-<!-- {% raw %} {% include list-simple-profiles.%} {% endraw %} -->
+{% include list-simple-profiles.xhtml %}
 
 #### Logical Models
 
 The following Logical Models have been defined for this implementation guide.
 
-<!-- {% raw %} {% include list-simple-logicals.%} {% endraw %} -->
+{% include list-simple-logicals.xhtml %}
 ---

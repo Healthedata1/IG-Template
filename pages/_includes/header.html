@@ -46,9 +46,9 @@
       <div id="ig-status" class="text-center">
 
       {% if {{site.data.fhir.ig.status}} == 'draft' %}
-      <h3>{{site.data.fhir.igName}} Implementation Guide CI Build</h3>
+      <strong>{{site.data.fhir.igName}} Implementation Guide CI Build</strong>
       {% else %}
-      <h3>{{site.data.fhir.igName}} Implementation Guide Release {{site.data.fhir.ig.version}}</h3>
+      <strong>{{site.data.fhir.igName}} Implementation Guide Release {{site.data.fhir.ig.version}}</strong>
       {% endif %}
 
     </div>

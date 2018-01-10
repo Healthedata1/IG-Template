@@ -1,7 +1,10 @@
-## {{ page.title }}
-{:.no_toc}
+---
+title: General Guidance and Definitions
+layout: default
+active: guidance
+---
 
-source pages/\_include/{{page.md_filename}}.md  file
+{:.no_toc}
 
 <!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
 

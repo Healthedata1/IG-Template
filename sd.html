@@ -2,20 +2,13 @@
 # jekyll header
 level: 2
 active: profiles
+template: sd
+layout: fhir-artifact
+type: {{[type]}}
+id: {{[id]}}
 ---
-{% include header.html %}
-
-{% include navbar.html %}
-
-{% include container-start.html %}
-
-<!-- ============BreadCrumb=============== -->
-
-{% include breadcrumbs.html %}
-
 <!-- ============CONTENT CONTENT=============== -->
 
-{% include nav-tabs.html type="{{[type]}}" id="{{[id]}}" active="content" %}
 
 <!--{% raw %}
 <ul class="nav nav-tabs">
@@ -108,7 +101,7 @@ This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basep
    <div id="tbl-diff-inner">
      <a name="summary"> </a>
 
-{ % include {{[type]}}-{{[id]}}-summary.xhtml %}
+{% include {{[type]}}-{{[id]}}-summary.xhtml %}
 
 
 <!--{% raw %}
@@ -236,36 +229,3 @@ This profile builds on <a href= "{{site.data.structuredefinitions.{{[id]}}.basep
 
 {% endif %}
   <!-- ==============END CONTENT END CONTENT=================== -->
-
-{% include container-end.html %}
-
-<script src="assets/js/jquery.js"> </script>
-<script src="assets/js/jquery-ui.min.js"> </script>
-<script>
-try {
-  var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
-}
-catch(exception){
-}
-
-if (!currentTabIndex)
-  currentTabIndex = '0';
-
-$( '#tabs' ).tabs({
-         active: currentTabIndex,
-         activate: function( event, ui ) {
-             var active = $('.selector').tabs('option', 'active');
-             currentTabIndex = ui.newTab.index();
-             document.activeElement.blur();
-             try {
-               sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
-             }
-             catch(exception){
-             }
-         }
-     });
-</script>
-
-{% include footer.html %}
-</body>
-</html>
